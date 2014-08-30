@@ -99,10 +99,10 @@
 
 (defn author->string [author]
   (let [name (:name author)
-        birthYear (:birth-year author)
-        deathYear (:death-year author)]
+        birth-year (:birth-year author)
+        death-year (:death-year author)]
     (str name (if (contains? author :birth-year)
-                (str " (" birthYear " - " deathYear ")")
+                (str " (" birth-year " - " death-year ")")
                 ""))))
 
 (defn authors->string [authors]
