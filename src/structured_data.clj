@@ -125,8 +125,8 @@
     (filter has-author? books)))
 
 (defn author-by-name [name authors]
-  (let [find-by-name  (fn [author] (= name (:name author)))]
-    (first (filter find-by-name authors))))
+  (let [macthes-name?  (fn [author] (= name (:name author)))]
+    (first (filter macthes-name? authors))))
 
 (defn living-authors [authors]
   (filter alive? authors))
