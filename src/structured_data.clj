@@ -125,10 +125,8 @@
     (filter has-author? books)))
 
 (defn author-by-name [name authors]
-  (let [first-author (first authors)]
-    (if (or (= (:name first-author) name) (empty? authors))
-      first-author
-      (author-by-name name (rest authors)))))
+  (let [find-by-name  (fn [author] (= name (:name author)))]
+    (first (filter find-by-name authors))))
 
 (defn living-authors [authors]
   (filter alive? authors))
